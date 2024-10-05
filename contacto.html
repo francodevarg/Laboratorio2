@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Juan Franco Narvaez - Página Personal</h1>
+        <h2>Formulario de Contacto</h2>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <form>
+            <!-- Nombre -->
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" maxlength="20" required>
+            <br>
+
+            <!-- Apellido -->
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" maxlength="20">
+            <br>
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+
+            <!-- Teléfono -->
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="11 4543 2342 " maxlength="10" required>
+            <br>
+
+            <!-- Edad -->
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" min="16" max="120"  required>
+            <br>
+
+            <!-- Dirección -->
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion">
+            <br>
+
+            <!-- Provincia -->
+            <label for="provincia">Provincia:</label>
+            <input type="text" id="provincia" name="provincia" list="provincias" required>
+            <datalist id="provincias">
+                <option value="Río Negro">
+                <option value="Neuquén">
+                <option value="Chubut">
+                <option value="Misiones">
+                <option value="Chaco">
+                <option value="Buenos Aires">
+                <option value="Santa Cruz">
+                <option value="Tierra del Fuego">
+            </datalist>
+            <br>
+
+            <!-- Código Postal -->
+            <label for="codigo_postal">Código Postal:</label>
+            <input type="text" id="codigo_postal" name="codigo_postal" required>
+            <br>
+
+            <label>Método preferido de contacto:</label>
+            <input type="radio" id="email_contact" name="contacto" value="email" checked>
+            <label for="email_contact">Correo electrónico</label>
+            <input type="radio" id="postal" name="contacto" value="postal">
+            <label for="postal">Correo postal</label>
+            <input type="radio" id="telefono_contact" name="contacto" value="telefono">
+            <label for="telefono_contact">Teléfono</label>
+            <br>
+
+            <!-- Suscripción -->
+            <label>Tipo de suscripcion :</label>
+            <input type="checkbox" id="noticias" name="suscripcion" value="noticias">
+            <label for="noticias">Noticias</label>
+            <input type="checkbox" id="promociones" name="suscripcion" value="promociones">
+            <label for="promociones">Promociones</label>
+            <input type="checkbox" id="alertas" name="suscripcion" value="alertas" checked>
+            <label for="alertas">Alertas</label>
+            <input type="checkbox" id="eventos" name="suscripcion" value="eventos">
+            <label for="eventos">Eventos</label>
+            <br>
+
+            <!-- Botón de Cargar -->
+            <button type="submit">Cargar</button>
+        </form>
+
+        <!-- Tabla -->
+        <table border="1">
+            <tr>
+                <th>Campo</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td>Nombre</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Apellido</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Teléfono</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Edad</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Dirección</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Provincia</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Código Postal</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Método de Contacto Preferido</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Suscripción</td>
+                <td></td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Universidad Nacional del Comahue. Todos los derechos reservados.</p>
+        <p>Los Alerces 485. Barrio 25 de mayo, Sierra Grande.</p>
+    </footer>
+</body>
+</html>
