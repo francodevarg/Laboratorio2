@@ -20,83 +20,83 @@
     </nav>
 
     <main>
-        <form>
-            <!-- Nombre -->
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" maxlength="20" required>
-            <br>
-
-            <!-- Apellido -->
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" maxlength="20">
-            <br>
-
-            <!-- Email -->
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <br>
-
-            <!-- Teléfono -->
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="11 4543 2342 " maxlength="10" required>
-            <br>
-
-            <!-- Edad -->
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="edad" min="16" max="120"  required>
-            <br>
-
-            <!-- Dirección -->
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion">
-            <br>
-
-            <!-- Provincia -->
-            <label for="provincia">Provincia:</label>
-            <input type="text" id="provincia" name="provincia" list="provincias" required>
-            <datalist id="provincias">
-                <option value="Río Negro">
-                <option value="Neuquén">
-                <option value="Chubut">
-                <option value="Misiones">
-                <option value="Chaco">
-                <option value="Buenos Aires">
-                <option value="Santa Cruz">
-                <option value="Tierra del Fuego">
-            </datalist>
-            <br>
-
-            <!-- Código Postal -->
-            <label for="codigo_postal">Código Postal:</label>
-            <input type="text" id="codigo_postal" name="codigo_postal" required>
-            <br>
-
-            <label>Método preferido de contacto:</label>
-            <input type="radio" id="email_contact" name="contacto" value="email" checked>
-            <label for="email_contact">Correo electrónico</label>
-            <input type="radio" id="postal" name="contacto" value="postal">
-            <label for="postal">Correo postal</label>
-            <input type="radio" id="telefono_contact" name="contacto" value="telefono">
-            <label for="telefono_contact">Teléfono</label>
-            <br>
-
-            <!-- Suscripción -->
-            <label>Tipo de suscripcion :</label>
-            <input type="checkbox" id="noticias" name="suscripcion" value="noticias">
-            <label for="noticias">Noticias</label>
-            <input type="checkbox" id="promociones" name="suscripcion" value="promociones">
-            <label for="promociones">Promociones</label>
-            <input type="checkbox" id="alertas" name="suscripcion" value="alertas" checked>
-            <label for="alertas">Alertas</label>
-            <input type="checkbox" id="eventos" name="suscripcion" value="eventos">
-            <label for="eventos">Eventos</label>
-            <br>
-
-            <!-- Botón de Cargar -->
+        <section>
+            <form>
+                <div class="form-group">
+                    <label for="nombre">Nombre (requerido):</label>
+                    <input type="text" id="nombre" name="nombre" maxlength="20" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" maxlength="20">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email (requerido):</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono" maxlength="10" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="16" max="120" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <textarea id="direccion" name="direccion"></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <label for="provincia">Provincia:</label>
+                    <input type="text" id="provincia" name="provincia" list="provincias" required>
+                    <datalist id="provincias">
+                        <option value="Río Negro">
+                        <option value="Neuquén">
+                        <option value="Chubut">
+                        <option value="Misiones">
+                        <option value="Chaco">
+                        <option value="Buenos Aires">
+                        <option value="Santa Cruz">
+                        <option value="Tierra del Fuego">
+                    </datalist>
+                </div>
+                                                
+                <div class="form-group">
+                    <label for="codigo_postal">Código Postal:</label>
+                    <input type="text" id="codigo_postal" name="codigo_postal" required pattern="^[A-Z][0-9]{4}[A-Z]{3}$" title="El formato debe ser: una 1 letra mayúscula, 4 números y 3 letras mayúsculas. Ejemplo: A1234ABC">
+                </div>
+    
+            <fieldset>
+                <legend>Método preferido de contacto:</legend>
+                <input type="radio" id="email_contact" name="contacto" value="email" checked>
+                <label for="email_contact">Correo electrónico</label>
+                <input type="radio" id="postal" name="contacto" value="postal">
+                <label for="postal">Correo postal</label>
+                <input type="radio" id="telefono_contact" name="contacto" value="telefono">
+                <label for="telefono_contact">Teléfono</label>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Tipo de suscripción:</legend>
+                <input type="checkbox" id="noticias" name="suscripcion" value="noticias">
+                <label for="noticias">Noticias</label>
+                <input type="checkbox" id="promociones" name="suscripcion" value="promociones">
+                <label for="promociones">Promociones</label>
+                <input type="checkbox" id="alertas" name="suscripcion" value="alertas" checked>
+                <label for="alertas">Alertas</label>
+                <input type="checkbox" id="eventos" name="suscripcion" value="eventos">
+                <label for="eventos">Eventos</label>
+            </fieldset>
+            
             <button type="submit">Cargar</button>
         </form>
-
-        <!-- Tabla -->
+        
         <table border="1">
             <tr>
                 <th>Campo</th>
@@ -143,8 +143,10 @@
                 <td></td>
             </tr>
         </table>
+    </section>
     </main>
-
+    
+    
     <footer>
         <p>&copy; 2024 Universidad Nacional del Comahue. Todos los derechos reservados.</p>
         <p>Los Alerces 485. Barrio 25 de mayo, Sierra Grande.</p>
