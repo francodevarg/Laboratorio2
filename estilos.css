@@ -6,6 +6,7 @@
 
 html {
     height: 100%;
+    width: 100%;
 }
 
 body {
@@ -21,7 +22,11 @@ header, footer {
     background-color: #0044cc;
     color: white;
     text-align: center;
-    padding: 16px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1, h2, p {
@@ -30,9 +35,20 @@ h1, h2, p {
     text-align: center;
 }
 
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 2;
+    justify-content: space-between;
+}
+
 nav {
     background-color: #333;
     text-align: center;
+    border-radius: 20px;
 }
 
 nav ul {
@@ -58,6 +74,7 @@ main {
     max-width: 900px;
     margin: 0 auto;
     background-color: white;
+    margin-top: 150px; /*==== EL MISMO HEIGHT HEADER====*/
 }
 
 footer {
@@ -65,11 +82,29 @@ footer {
     padding: 16px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 16px auto;
+.header-brand{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-brand__title{
+    font-size: 28px;
+}
+
+.header-brand__logo {
+    width: 82px;
+    height: 82px;
+    animation: spin 5s linear infinite;
+    margin:.2rem;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
 }
 
 /*===== Formulario Contacto */
