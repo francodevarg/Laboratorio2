@@ -77,6 +77,24 @@ main {
     margin-top: 150px; /*==== EL MISMO HEIGHT HEADER====*/
 }
 
+main h2{
+    position: sticky;
+}
+
+article{
+    max-height: 300px;
+    overflow-y: scroll;
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+}
+
+.about-photo{
+    display: block;
+    margin: 0 auto;
+    height: 120px;
+    width: 120px;
+}
+
 footer {
     font-size: 12.8px;
     padding: 16px;
@@ -106,6 +124,30 @@ footer {
         transform: rotateY(360deg);
     }
 }
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: #007BFF;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+
 
 /*===== Formulario Contacto */
 form {
