@@ -1,3 +1,16 @@
+const btnLeerMas = document.getElementById("btn-leer-mas");
+const textoCompleto = document.getElementById("texto-completo");
+btnLeerMas.addEventListener("click", function () {
+    // Alterna la visibilidad del texto completo
+    if (textoCompleto.style.display === "none") {
+        textoCompleto.style.display = "block";
+        btnLeerMas.textContent = "Leer menos";
+    } else {
+        textoCompleto.style.display = "none";
+        btnLeerMas.textContent = "Leer más...";
+    }
+});
+
 function scrollToTop() {
     window.scrollTo({
         top: 0,
