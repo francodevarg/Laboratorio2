@@ -1,15 +1,19 @@
-const btnLeerMas = document.getElementById("btn-leer-mas");
-const textoCompleto = document.getElementById("texto-completo");
-btnLeerMas.addEventListener("click", function () {
-    // Alterna la visibilidad del texto completo
-    if (textoCompleto.style.display === "none") {
-        textoCompleto.style.display = "block";
-        btnLeerMas.textContent = "Leer menos";
-    } else {
-        textoCompleto.style.display = "none";
-        btnLeerMas.textContent = "Leer más...";
+document.addEventListener("DOMContentLoaded", function() {
+    const btnLeerMas = document.getElementById("btn-leer-mas");
+    const textoCompleto = document.getElementById("texto-completo");
+    if(btnLeerMas && textoCompleto){
+        btnLeerMas.addEventListener("click", function () {
+            if (textoCompleto.style.display === "none") {
+                textoCompleto.style.display = "block";
+                btnLeerMas.textContent = "Leer menos";
+            } else {
+                textoCompleto.style.display = "none";
+                btnLeerMas.textContent = "Leer más...";
+            }
+        });
     }
 });
+
 
 function scrollToTop() {
     window.scrollTo({
@@ -28,7 +32,11 @@ function actualizarTabla(id) {
 
 // Añadimos un event listener para cada campo que ejecuta la función de actualización
 campos.forEach(id => {
-    document.getElementById(id).addEventListener('input', function() {
-        actualizarTabla(id);
-    });
+    let campoFormulario = document.getElementById(id);
+    if(campoFormulario){
+        campoFormulario.addEventListener('input', function() {
+            actualizarTabla(id);
+        });
+    }
+
 });
