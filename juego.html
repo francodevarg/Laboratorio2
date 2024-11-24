@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body> 
+    <header>
+        <a href="index.html">Volver a la página principal</a>
+        <h1>Piedra, Papel o Tijera</h1>
+    </header>
+    <div class="game-container">
+        <h1 id="round">Ronda: 1</h1>
+        <div class="game">
+            <div class="player">
+                <h3>Jugador 1</h3>
+                <p id="player-choice" class="unknow-animation">&#129300;</p>
+                <p id="player-score">0</p>
+            </div>
+            <div class="computer">
+                <h3>Computadora</h3>
+                <p id="computer-choice" class="unknow-animation">❓</p>
+                <p id="computer-score">0</p>
+            </div>
+        </div>
+        <p id="result"></p>
+        <div class="choices">
+            <button id="piedra" onclick="play('piedra')">✊</button>
+            <button id="papel" onclick="play('papel')">✋</button>
+            <button id="tijera" onclick="play('tijera')">✌️</button>
+        </div>
+        <button class="btn-reset" onclick="resetGame()">Reiniciar</button>
+    </div>
+    <script src="juego.js"></script>
+</body>
+</html>

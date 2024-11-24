@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+    actualizarSuscripcionYContacto();
 });
 
 
@@ -39,4 +40,46 @@ campos.forEach(id => {
         });
     }
 
+});
+
+//Para mostrar en la tabla las suscripciones
+function obtenerSuscripciones() {
+    const suscripciones = [];    
+    if (document.getElementById('noticias').checked) {
+        suscripciones.push('Noticias');
+    }
+    if (document.getElementById('promociones').checked) {
+        suscripciones.push('Promociones');
+    }
+    if (document.getElementById('alertas').checked) {
+        suscripciones.push('Alertas');
+    }
+    if (document.getElementById('eventos').checked) {
+        suscripciones.push('Eventos');
+    }
+
+    return suscripciones.join(', ');
+}
+
+//Para mostrar metodo de contacto en la tabla
+function obtenerMetodoContacto() {
+    const contacto = document.querySelector('input[name="contacto"]:checked');
+    return contacto ? contacto.value : ''; 
+}
+
+// Función para actualizar la tabla con suscripciones y contacto
+function actualizarSuscripcionYContacto() {
+    const suscripcion = obtenerSuscripciones();
+    const contacto = obtenerMetodoContacto();
+    
+    // Actualiza la tabla
+    document.querySelector('td[data-field="suscripcion"]').textContent = suscripcion;
+    document.querySelector('td[data-field="contacto"]').textContent = contacto;
+}
+
+document.querySelectorAll('input[name="suscripcion"]').forEach(input => {
+    input.addEventListener('change', actualizarSuscripcionYContacto);
+});
+document.querySelectorAll('input[name="contacto"]').forEach(input => {
+    input.addEventListener('change', actualizarSuscripcionYContacto);
 });
