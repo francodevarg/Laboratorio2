@@ -4,104 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra, Papel o Tijera</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #0066ff, #00ccff);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .game-container {
-            text-align: center;
-            background: #ffffff33;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 365px;
-        }
-
-        h1 {
-            margin-top: 0;
-        }
-
-        .game {
-            display: flex;
-            justify-content: space-between;
-            gap:1rem;
-            margin: 20px 0;
-        }
-
-        .player, .computer {
-            background: #ffffff33;
-            padding: 10px;
-            border-radius: 8px;
-            width: 45%;
-            text-align: center;
-            position: relative;
-        }
-
-        .player > p ,
-        .computer > p {
-            font-size: 32px;
-        }
-
-        .choices {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .choices button {
-            font-size: 24px;
-            margin: 5px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .choices button:hover {
-            transform: scale(1.2);
-        }
-
-        #result {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-
-        button {
-            background-color: #fff;
-            color: #333;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .btn-reset{
-            background-color: transparent;
-            color: white;
-        }
-
-        /* Animación de elección de la computadora */
-        .unknow-animation {
-            animation: shake 0.5s ease infinite;
-        }
-
-        @keyframes shake {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-            100% { transform: scale(1); }
-        }
-    </style>
+    <link rel="stylesheet" href="juego.css">
 </head>
-<body>
-    <div class="game-container">
+<body> 
+    <header>
+        <a href="index.html">Volver a la página principal</a>
         <h1>Piedra, Papel o Tijera</h1>
-        <h2 id="round">Ronda: 1</h2>
+    </header>
+    <div class="game-container">
+        <h1 id="round">Ronda: 1</h1>
         <div class="game">
             <div class="player">
                 <h3>Jugador 1</h3>
@@ -116,74 +27,12 @@
         </div>
         <p id="result"></p>
         <div class="choices">
-            <button onclick="play('piedra')">✊</button>
-            <button onclick="play('papel')">✋</button>
-            <button onclick="play('tijera')">✌️</button>
+            <button id="piedra" onclick="play('piedra')">✊</button>
+            <button id="papel" onclick="play('papel')">✋</button>
+            <button id="tijera" onclick="play('tijera')">✌️</button>
         </div>
         <button class="btn-reset" onclick="resetGame()">Reiniciar</button>
     </div>
-    <script>
-        let playerScore = 0;
-        let computerScore = 0;
-        let round = 1;
-
-        function play(playerChoice) {
-            const choices = ["piedra", "papel", "tijera"];
-            const icons = {
-                piedra: "✊",
-                papel: "✋",
-                tijera: "✌️"
-            };
-
-            const playerChoiceEl = document.getElementById("player-choice");
-            playerChoiceEl.innerText = `${icons[playerChoice]}`;
-
-            // Mostrar signo de pregunta en la elección de la PC
-            const computerChoiceEl = document.getElementById("computer-choice");
-            computerChoiceEl.innerText = "❓";
-            computerChoiceEl.classList.add("unknow-animation");
-            playerChoiceEl.classList.add("unknow-animation");
-
-            // Simular un pequeño retraso antes de mostrar la elección de la computadora
-            setTimeout(() => {
-                const computerChoice = choices[Math.floor(Math.random() * 3)];
-                computerChoiceEl.innerText = icons[computerChoice];
-                computerChoiceEl.classList.remove("unknow-animation");
-                playerChoiceEl.classList.remove("unknow-animation");
-
-                // Determinar el resultado de la ronda
-                if (playerChoice === computerChoice) {
-                    document.getElementById("result").innerText = "¡Empate!";
-                } else if (
-                    (playerChoice === "piedra" && computerChoice === "tijera") ||
-                    (playerChoice === "papel" && computerChoice === "piedra") ||
-                    (playerChoice === "tijera" && computerChoice === "papel")
-                ) {
-                    playerScore++;
-                    document.getElementById("result").innerText = "¡Ganaste esta ronda!";
-                } else {
-                    computerScore++;
-                    document.getElementById("result").innerText = "Perdiste esta ronda.";
-                }
-
-                document.getElementById("player-score").innerText = playerScore;
-                document.getElementById("computer-score").innerText = computerScore;
-                document.getElementById("round").innerText = `Ronda: ${++round}`;
-            }, 2000); // Espera 800 ms para mostrar la elección de la PC
-        }
-
-        function resetGame() {
-            playerScore = 0;
-            computerScore = 0;
-            round = 1;
-            document.getElementById("player-score").innerText = playerScore;
-            document.getElementById("computer-score").innerText = computerScore;
-            document.getElementById("round").innerText = `Ronda: ${round}`;
-            document.getElementById("result").innerText = "";
-            document.getElementById("player-choice").innerText = "🤔";
-            document.getElementById("computer-choice").innerText = "❓";
-            document.getElementById("computer-choice").classList.add("computer-choice");
-        }
-    </script>
+    <script src="juego.js"></script>
 </body>
 </html>
